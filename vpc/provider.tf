@@ -3,7 +3,7 @@
 #########################
 terraform {
   backend "s3" {
-    bucket = "NOMBRE-BUCKET-S3"
+    bucket = "BUCKET"
     key    = "states/vpc_terraform.tfstate"
     region = "eu-west-1"
   }

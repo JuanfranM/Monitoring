@@ -10,7 +10,10 @@ module "complete_sg" {
 
   ingress_with_cidr_blocks = [
     {
-      rule        = "http-80-tcp"
+      from_port   = 3000
+      to_port     = 3000
+      protocol    = "tcp"
+      description = "User-service ports (ipv4)"
       cidr_blocks = "0.0.0.0/0"
     },
     {
@@ -28,14 +31,14 @@ module "ssh_key_pair" {
   source                = "git::https://github.com/cloudposse/terraform-tls-ssh-key-pair.git?ref=master"
   namespace             = "${var.namespace}"
   stage                 = "${var.stage}"
-  name                  = "${var.grafana-key-name}"
+  name                  = "${var.server-key-name}"
   ssh_public_key_path   = "./.key"
   private_key_extension = ".pem"
   public_key_extension  = ".pub"
   chmod_command         = "chmod 600 %v"
 }
 resource "aws_key_pair" "grafana" {
-  key_name   = var.grafana_name
+  key_name   = var.server_name
   public_key = module.ssh_key_pair.public_key
 }
 ########################################

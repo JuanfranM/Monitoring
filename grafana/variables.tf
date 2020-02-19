@@ -32,12 +32,12 @@ variable "instance_name" {
   default     = "Grafana"
 }
 variable "instance_type" {
-  default = "t3.medium"
+  default = "t3.small"
 }
 
 variable "instance-type" {
   description = "Instance Type from the server"
-  default     = "t3.medium"
+  default     = "t3.small"
 }
 variable "sg_ssh_access" {
   description = "IP whit ssh access the instance server"
