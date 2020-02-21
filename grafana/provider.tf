@@ -9,8 +9,8 @@ terraform {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "nubersia-terraform-state"
-    key    = "states/grafana/vpc_terraform.tfstate"
+    bucket = "BUCKET"
+    key    = "states/vpc_terraform.tfstate"
     region = "eu-west-1"
   }
 }
