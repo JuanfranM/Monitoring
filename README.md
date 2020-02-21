@@ -2,6 +2,7 @@
 ### Despliegue infraestructura.
 
 ## INSTRUCCIONES DE USO ##
+* Requiere terraform versión 0.12.20 o superior.
 * Debe disponer de un bucket S3 creado para el almacen de los tfstates de terraform, dentro crear un directorio con nombre "states".
 * Se debe configurar las credenciales de la cuenta AWS por defecto para AWSCLI.
 * Verificar y de ser necesario modificar solo los ficheros "provider" y "variables" de cada stack que se quiera desplegar.
@@ -25,6 +26,8 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 ```
+
+### 3- Conectamos val grafana vía http://public-ip:3000  ingresamos con usuario:admin  contraseña:admin 
 
 ## Autor
 
